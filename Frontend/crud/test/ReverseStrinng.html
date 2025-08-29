@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="reverseString()">Click to reverse a string</button>
+    <p id="result"></p>
+
+    <script>
+        function reverseString() {
+            let str = document.getElementById("inputString").value;
+            let reversed = str.split("").reverse().join("");
+            document.getElementById("result").innerText = "Reserved : " + reversed;
+        } 
+    </script>
+</body>
+</html>

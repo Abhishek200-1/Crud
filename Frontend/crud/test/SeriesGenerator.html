@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Start number:</label>
+    <input type="number" id="start"><br>
+
+    <label>Common difference:</label>
+    <input type="number" id="diff"><br>
+
+    <label>Number of terms:</label>
+    <input type="number" id="terms"><br>
+
+    <button onclick="generateSeries()">Click me</button>
+
+    <h4 id="output"></h4>
+    <h4 id="total"></h4>
+
+    <script>
+        function generateSeries() {
+            let start = parseInt(document.getElementById("start").value);
+            let diff = parseInt(document.getElementById("diff").value);
+            let terms = parseInt(document.getElementById("terms").value);
+
+            let series = "";
+            let sum = 0;
+
+            for(let i=0; i<=terms; i++){
+                let current = start + i * diff;
+                series = series + current + " ";
+                sum = sum + current;  
+            }
+            document.getElementById("output").innerText = "Series: " + series;
+            document.getElementById("total").innerText = "Total: " + sum;
+        }
+    </script>
+</body>
+</html>

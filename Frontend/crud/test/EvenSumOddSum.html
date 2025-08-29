@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="arrayInput" placeholder="Enter Numbers">
+    <button onclick="findNumbers()">Find Numbers</button>
+    <p id="array"></p>
+    <p id="evenSum"></p>
+    <p id="oddSum"></p>
+
+    <script>
+        function findNumbers() {
+            let input = document.getElementById("arrayInput").value;
+            let arr = input.split(",").map(Number);
+
+            let evenSum = 0;
+            let oddSum = 0;
+
+            for(let i = 0; i < arr.length; i++ ){
+                if(arr[i] % 2 === 0){
+                    evenSum = evenSum + arr[i]
+                }
+                else
+                {
+                    oddSum = oddSum + arr[i]
+                }
+            }
+            document.getElementById("array").innerText = "Array : " + arr;
+            document.getElementById("evenSum").innerText = "Even Sum : " + evenSum;
+            document.getElementById("oddSum").innerText = "Odd Sum : " + oddSum;
+        }
+    </script>
+</body>
+</html>

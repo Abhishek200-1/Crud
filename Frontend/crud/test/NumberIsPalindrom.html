@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="palindromWord" placeholder="Enter a word">
+    <button onclick="findPalindrom()">Click Me</button>
+
+    <p id="result"></p>
+
+    <script>
+        function findPalindrom() {
+            let str = document.getElementById("palindromWord").value;
+            let reversed = str.split("").reverse("").join("");
+
+            if(str === reversed){
+                document.getElementById("result").innerText = str + " is a palindrom"
+            }
+            else
+            {
+                document.getElementById("result").innerText = str + " is not palindrom"
+            }
+        }
+    </script>
+</body>
+</html>
